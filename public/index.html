@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 logo--container">
-        <img src="./assets/clover_logo.png" class="logo"></img>
+        <img src="./assets/gopos-logo.png" class="logo"></img>
       </div> 
       <div class="col-10 offset-1 offset-md-0 col-md-6 col-lg-5 status--container">
         <h3 class="status" id="status-message"><span class="red" id="default-status-message">Not connected to your Clover device. Please connect to perform an action.</span></h3>
@@ -22,6 +22,9 @@
       <div class="col-10 offset-1 col-md-5 offset-md-0 col-lg-4 offset-lg-1 pos--container tdshadow top24">
         <div class="col-12 p-0 mt-2">
           <!-- TODO: Insert select element here. -->
+          Select device:
+          <select id="select--clover-device-serials"></select>
+          <!-- DONE -->
         </div> 
         
         <div class="row">
@@ -35,12 +38,18 @@
         <div class="row">
           <div class="col-12">
             <div class="numpad--key key--secondary p-0 mx-0" id="key--hello-world">
-              Hello World
+              Show Hello World
             </div>
           </div>
         </div> 
         
         <!-- TODO: Insert canvas element here. -->
+        <div class="row top24 justify-content-center">
+          <div class="col-10 col-md-4 canvas-container">
+            <canvas ref="canvas" width="300" height="175" id="verify-signature-canvas"/>
+          </div> 
+        </div>
+        <!-- DONE -->
       </div>
       
       <div class="pos--container tdshadow top24 col-10 col-md-6 col-lg-5 offset-1 mb-4">
@@ -110,6 +119,10 @@
           <div class="row form-inline justify-content-center">
             <div class="col-12">
               <!-- TODO: Create a checkbox for manual card entry. -->
+              <label>
+                <input type="checkbox" id="checkbox-manual-card-entry"/> Manual card entry?
+              </label>
+              <!-- DONE -->
             </div> 
             
             <div class="col-12 form-inline justify-content-center">

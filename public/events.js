@@ -45,9 +45,46 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   chargeKey.addEventListener("click", function() {
+    var amount = parseInt(document.getElementById("total").innerHTML.replace(".", ""));
+    // 'amount' is an int of the number of cents to charge.
+    if (amount > 0) {
+      remotePayCloudTutorial.performSale(amount);
+    }
   });
   
   helloWorldKey.addEventListener("click", function() {
     remotePayCloudTutorial.showHelloWorld();
   });
+
+  // Phan
+  fetch(`${remotePayCloudTutorial.targetCloverDomain}/v3/merchants/${remotePayCloudTutorial.merchant_id}/devices?access_token=${remotePayCloudTutorial.access_token}`)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    var select = document.getElementById("select--clover-device-serials");
+
+    data.elements.forEach(function(device) {
+      // Currently, Clover Mobile, Mini, and Flex are compatible with Cloud Pay Display.
+      // Their serial numbers begin with C02, C03, and C04, respectively.
+      var eligibleDevicesFirstThree = ["C02", "C03", "C04"];
+      var serialFirstThree = device.serial.slice(0, 3);
+
+      // Clover Station and Clover Station 2018 have serial numbers that begin with
+      // C01 and C05. They will likely never use Cloud Pay Display
+      // because they are not the best form factors for a customer-facing screen.
+      // Additionally, Clover emulators have a serial of 'unknown' or begin with 'EMULATOR'.
+
+      if (eligibleDevicesFirstThree.includes(serialFirstThree)) {
+        var option = document.createElement("option");
+        option.text = device.serial;
+        option.value = device.id;
+        select.add(option);
+      }
+    });
+  })
+  .catch(function(error) {
+    window.alert(error.toString());
+  });
+
 });

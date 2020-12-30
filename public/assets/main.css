@@ -30,7 +30,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: url("./images/backgroundImage.jpg"); }
+  background: url("./images/backgroundImage.jpg") no-repeat fixed center; }
 
 button:focus {
   outline: 0; }
@@ -169,10 +169,10 @@ canvas {
   padding: 15px 0; }
 
 .key--primary, .key--primary:active {
-  background-color: #65AC42;
-  -webkit-box-shadow: 0px 6px 0px #65AC42, 0px 6px 25px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 6px 0px #65AC42, 0px 6px 25px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 6px 0px #65AC42, 0px 6px 25px rgba(0, 0, 0, 0.7); }
+  background-color: #3e69dc;
+  -webkit-box-shadow: 0px 6px 0px #3e69dc, 0px 6px 25px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 6px 0px #3e69dc, 0px 6px 25px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 6px 0px #3e69dc, 0px 6px 25px rgba(0, 0, 0, 0.7); }
 
 .key--secondary, .key--secondary:active {
   background-color: #007e3b; }

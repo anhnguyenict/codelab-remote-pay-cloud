@@ -4,7 +4,7 @@
 
 body {
   font-family: $primary-serif;
-  background:url("./images/backgroundImage.jpg");
+  background:url("./images/backgroundImage.jpg") no-repeat fixed center;
 }
 
 button:focus {
