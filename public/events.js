@@ -57,8 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Phan
-  fetch(`${remotePayCloudTutorial.targetCloverDomain}/v3/merchants/${remotePayCloudTutorial.merchant_id}/devices?access_token=${remotePayCloudTutorial.access_token}`)
-  .then(function(response) {
+  fetch(`${remotePayCloudTutorial.targetCloverDomain}/v3/merchants/${remotePayCloudTutorial.merchant_id}/devices?access_token=${remotePayCloudTutorial.access_token}`, {
+  })
+  .then(function(response) {console.log(response);
     return response.json();
   })
   .then(function(data) {

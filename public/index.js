@@ -12,8 +12,12 @@ RemotePayCloudTutorial = function() {
 
   this.merchant_id = window.location.href.match(/merchant_id=([^&]*)/)[1];
   this.access_token = window.location.href.match(/access_token=([^&]*)/)[1];
-  this.targetCloverDomain = window.location.href.includes("localhost") ? "https://sandbox.dev.clover.com" : "https://www.clover.com";
-  this.remoteApplicationId = "CLOVERDEV.655VQ41Z9CVF8";
+  //this.targetCloverDomain = window.location.href.includes("localhost") ? "https://sandbox.dev.clover.com" : "https://www.clover.com";
+  this.targetCloverDomain = "https://www.clover.com"; //demo
+  //remoteApplicationId different with Clover App ID, it can be RAID https://docs.clover.com/docs/create-your-remote-app-id 
+  //this.remoteApplicationId = "CLOVERDEV.655VQ41Z9CVF8";
+  //this.remoteApplicationId = "Z74NH8VBJP6Z6.N4Q7TE12VT90R"; // Go POS app
+  this.remoteApplicationId = "Z74NH8VBJP6Z6.10BYHYXYEQT0C"; // Go POS 2 app
   this.friendlyId = "Primary POS";
 
   remotePayCloudTutorial = this;
@@ -39,6 +43,7 @@ RemotePayCloudTutorial.prototype.connect = function() {
   // [friendlyId] , which is a human-readable way to identify the POS
 
   var deviceId = document.getElementById("select--clover-device-serials").value;
+  //var deviceId = "RB4680YSA87Z1";
 
   var cloverConnectorFactoryConfiguration = {};
   cloverConnectorFactoryConfiguration[clover.CloverConnectorFactoryBuilder.FACTORY_VERSION] = clover.CloverConnectorFactoryBuilder.VERSION_12;
