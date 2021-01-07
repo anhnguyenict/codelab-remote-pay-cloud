@@ -13,11 +13,12 @@ RemotePayCloudTutorial = function() {
   this.merchant_id = window.location.href.match(/merchant_id=([^&]*)/)[1];
   this.access_token = window.location.href.match(/access_token=([^&]*)/)[1];
   //this.targetCloverDomain = window.location.href.includes("localhost") ? "https://sandbox.dev.clover.com" : "https://www.clover.com";
-  this.targetCloverDomain = "https://www.clover.com"; //demo
+  //this.targetCloverDomain = "https://sandbox.dev.clover.com"; // Sandbox
+  this.targetCloverDomain = "https://www.clover.com"; // Demo
   //remoteApplicationId different with Clover App ID, it can be RAID https://docs.clover.com/docs/create-your-remote-app-id 
-  //this.remoteApplicationId = "CLOVERDEV.655VQ41Z9CVF8";
-  //this.remoteApplicationId = "Z74NH8VBJP6Z6.N4Q7TE12VT90R"; // Go POS app
-  this.remoteApplicationId = "Z74NH8VBJP6Z6.10BYHYXYEQT0C"; // Go POS 2 app
+  //this.remoteApplicationId = "CLOVERDEV.655VQ41Z9CVF8"; // Codelab app
+  this.remoteApplicationId = "Z74NH8VBJP6Z6.N4Q7TE12VT90R"; // Go POS Connect app of Demo
+  //this.remoteApplicationId = "Z74NH8VBJP6Z6.10BYHYXYEQT0C"; // Go POS 2 of Demo
   this.friendlyId = "Primary POS";
 
   remotePayCloudTutorial = this;
